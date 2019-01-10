@@ -7,14 +7,9 @@ import {AutocompletePageComponent} from './components/autocomplete-page/autocomp
 import {HomeComponent} from './components/home/home.component';
 
 const routes: Routes = [
-  { path: '',
-    component: AppComponent,
-    children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
-      { path: 'home', component: HomeComponent },
-      { path: 'autocomplete', component: AutocompletePageComponent }
-    ]
-  }
+  { path: 'home', component: HomeComponent },
+  { path: 'autocomplete', component: AutocompletePageComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
