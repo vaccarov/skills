@@ -1,14 +1,33 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
+import {RouterModule, Routes} from '@angular/router';
+import {AutocompletePageComponent} from './components/autocomplete-page/autocompletePage.component';
+import {HomeComponent} from './components/home/home.component';
+
+const routes: Routes = [
+  { path: '',
+    component: AppComponent,
+    children: [
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent },
+      { path: 'autocomplete', component: AutocompletePageComponent }
+    ]
+  }
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    AutocompletePageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(
+      routes
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]
