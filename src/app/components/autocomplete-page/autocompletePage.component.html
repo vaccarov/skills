@@ -1,1 +1,33 @@
-inside autocomplete page
+<div class="autocomplete__container">
+
+  <div class="autocomplete__set-values">
+
+    <h3 class="autocomplete__title">Parameters</h3>
+
+    <div class="autocomplete__form" [formGroup]="values">
+      <label><div>Placeholder</div><input type="text" formControlName="placeholder"></label>
+      <label><div>MinCharacters</div><input type="number" formControlName="minCharacters" [min]="0"></label>
+      <label><div>MaxResults</div><input type="number" formControlName="maxResults" [min]="0"></label>
+      <label><div>MaxHeight</div><input type="number" formControlName="maxHeight" [min]="0"></label>
+      <label><div>Value</div><input type="text" formControlName="value"></label>
+      <label><div>CleanInputOnSelection</div><input type="checkbox" formControlName="cleanInputOnSelection"></label>
+      <!--<label><div>items</div><input type="string" formControlName="items"></label>-->
+    </div>
+
+    <app-autocomplete
+      class="autocomplete__autocomplete"
+      [data]="data"
+      [update]="update"
+      (onItemSelected)="itemSelected($event)">
+    </app-autocomplete>
+
+    <h3 class="autocomplete__title">Logs</h3>
+    <pre *ngFor="let message of messageList">{{message}}</pre>
+  </div>
+
+  <div class="autocomplete__get-values">
+    <h3 class="autocomplete__title">Raw data</h3>
+    <pre>{{data | json}}</pre>
+  </div>
+
+</div>

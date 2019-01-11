@@ -6,21 +6,18 @@
 
   <div class="app__content">
 
-    <div class="app__side-menu">
+    <button class="app__burger-icon" (click)="toggleSideMenu()">{{sideMenuClosed ? O : X}}</button>
+
+    <div class="app__side-menu" [class.w-0]="sideMenuClosed">
       <ul class="app__side-menu--list">
         <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
         <li><a routerLink="/autocomplete" routerLinkActive="active">Autocomplete</a></li>
       </ul>
     </div>
 
-    <div class="app__main-menu">
+    <div class="app__main-menu" [class.w-100]="sideMenuClosed">
       <router-outlet></router-outlet>
     </div>
 
   </div>
-
-  <div class="app__footer">
-    <div class="app__footer--title">Created by Victor VACCARO</div>
-  </div>
-
 </div>

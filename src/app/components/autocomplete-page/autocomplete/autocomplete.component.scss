@@ -1,0 +1,55 @@
+.autocomplete {
+
+  &__container {
+    position: relative;
+  }
+
+  &__input {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 13px 0 13px 15px;
+    border: none;
+    border-bottom: 1px solid #DEDEDE;
+    color: #2f3542;
+
+    &::placeholder {
+      color: #87888A;
+    }
+
+    &_clear {
+      position: absolute;
+      top: 13px;
+      right: 15px;
+      color: #2f3542;
+      cursor: pointer;
+    }
+  }
+
+  &__list_items {
+    overflow-y: scroll;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    background-color: #2f3542;
+
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.35);
+  }
+
+  &__item {
+    height: 55px;
+    padding: 0 15px;
+    cursor: pointer;
+
+    &--selected {
+      background-color: #a4b0be;
+    }
+    & > div {
+      line-height: 55px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    &_name {}
+  }
+}

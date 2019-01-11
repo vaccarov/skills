@@ -19,36 +19,41 @@
   }
 
   &__content {
-    height: calc(100% - 400px);
+    height: calc(100% - 200px);
 
     & > div {
       display: inline-block;
-      height: 100%;
       vertical-align: top;
+      height: 100%;
+      transition-property: width;
+      transition-duration: 400ms;
     }
+  }
+
+  &__burger-icon {
+    position: absolute;
+    right: 13px;
+    top: 10px;
+    cursor: pointer;
   }
 
   &__side-menu {
     width: 200px;
+    position: relative;
     background-color: #747d8c;
 
     &--list {
-
+      margin-top: 50px;
     }
   }
 
   &__main-menu {
     width: calc(100% - 200px);
     background-color: #57606f;
-  }
-
-
-  &__footer {
-    height: 200px;
-
-    &--title {
-      text-align: center;
-      line-height: 200px;
-    }
+    overflow-y: scroll;
+    box-sizing: border-box;
   }
 }
+
+.w-0 { width: 0; visibility: hidden; }
+.w-100 { width: 100%; }

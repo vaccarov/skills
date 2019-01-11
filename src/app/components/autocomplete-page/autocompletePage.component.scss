@@ -1,0 +1,47 @@
+.autocomplete {
+
+  &__container {}
+
+  &__title {
+    color: #2f3542;
+  }
+
+  &__set-values {
+    float: left;
+    padding-left: 30px;
+    max-width: 400px;
+
+  }
+
+  &__get-values {
+    float: left;
+    padding-left: 30px;
+  }
+
+  &__form {
+    margin-bottom: 20px;
+    text-align: left;
+
+    & > * {
+      display: block;
+    }
+
+    & > label > div {
+      display: inline-block;
+      width: 200px;
+    }
+  }
+
+  &__autocomplete {
+    width: 300px;
+    display: inline-block;
+    text-align: left;
+  }
+}
+
+pre {
+  border: 1px solid #FFF;
+  padding: 10px;
+  max-width: 350px;
+  overflow-x: scroll;
+}

@@ -5,6 +5,8 @@ import {AppComponent} from './app.component';
 import {RouterModule, Routes} from '@angular/router';
 import {AutocompletePageComponent} from './components/autocomplete-page/autocompletePage.component';
 import {HomeComponent} from './components/home/home.component';
+import {AutocompleteComponent} from './components/autocomplete-page/autocomplete/autocomplete.component';
+import {ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,14 +17,18 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    // Pages
     HomeComponent,
-    AutocompletePageComponent
+    AutocompletePageComponent,
+    // Custom components
+    AutocompleteComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(
       routes
-    )
+    ),
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,34 @@
+<div class="autocomplete__container" *ngIf="data">
+
+  <!-- Input where user enter the search term -->
+  <input class="autocomplete__input"
+         [placeholder]="data.placeholder"
+         [formControl]="inputControl"
+         (focus)="inputFocused()"
+         (keydown)="onKeyDown($event)">
+
+  <!-- Erase input button -->
+  <div class="autocomplete__input_clear" *ngIf="showBorderShadow" (click)="eraseInput()">X</div>
+
+  <!-- Container for list of terms -->
+  <div class="autocomplete__list_items" [ngStyle]="{'max-height.px': data.maxHeight}" *ngIf="showBorderShadow" #itemList>
+    <!-- Item box, repeated for every matching item depending on what's in the input -->
+    <div *ngFor="let item of filteredItems | async"
+         class="autocomplete__item"
+         [class.autocomplete__item--selected]="isItemSelected(item)"
+         (click)="itemSelected(item)"
+         (mouseover)="setActiveItem(item)">
+      <!-- Name-->
+      <div class="autocomplete__item_name">{{item.name}}</div>
+    </div>
+
+    <!-- No result -->
+    <div class="autocomplete__item" *ngIf="!(filteredItems | async).length">
+      <div>
+        {{inputControl.value?.length >= data.minCharacters ?
+        'No results' : 'Enter at least ' + data.minCharacters + ' characters'}}
+      </div>
+    </div>
+
+  </div>
+</div>
