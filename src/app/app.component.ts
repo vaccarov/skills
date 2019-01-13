@@ -7,12 +7,8 @@ import {Component} from '@angular/core';
 })
 export class AppComponent {
   public sideMenuOpen = false;
-
+  
   toggleSideMenu(open?: boolean) {
-    if (open === false) {
-      this.sideMenuOpen = false;
-    } else {
-      this.sideMenuOpen = !this.sideMenuOpen;
-    }
+    this.sideMenuOpen = (open === false ? false : !this.sideMenuOpen);
   }
 }

@@ -1,26 +1,19 @@
 <div class="app__container">
-
-  <div class="app__header">
-    <div class="app__header--title">Angular components</div>
+  
+  <div class="app__content-burger" (click)="toggleSideMenu()">
+    <div></div><div></div><div></div>
   </div>
-
-  <div class="app__content">
-
-    <div class="  app__content-burger" (click)="toggleSideMenu()">
-      <div></div><div></div><div></div>
-    </div>
-
-    <div class="app__content-side" [class.app__content-side--open]="sideMenuOpen">
-      <ul class="app__content-side--list">
-        <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-        <li><a routerLink="/autocomplete" routerLinkActive="active">Autocomplete</a></li>
-      </ul>
-    </div>
-
-    <div class="app__content-main" [class.app__content-main--open]="sideMenuOpen"
-      (click)="toggleSideMenu(false)">
-      <router-outlet></router-outlet>
-    </div>
-
+  
+  <div class="app__content-side" [class.app__content-side--open]="sideMenuOpen">
+    <ul class="app__content-side--list">
+      <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/resume" routerLinkActive="active">Resume</a></li>
+      <li><a routerLink="/autocomplete" routerLinkActive="active">Autocomplete</a></li>
+    </ul>
   </div>
+  
+  <div class="app__content-main" [class.app__content-main--open]="sideMenuOpen" (click)="toggleSideMenu(false)">    
+    <router-outlet></router-outlet>
+  </div>
+  
 </div>

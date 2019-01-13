@@ -7,9 +7,11 @@ import {AutocompletePageComponent} from './components/autocomplete-page/autocomp
 import {HomeComponent} from './components/home/home.component';
 import {AutocompleteComponent} from './components/autocomplete-page/autocomplete/autocomplete.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { ResumeComponent } from './components/resume/resume.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  { path: 'resume', component: ResumeComponent },
   { path: 'autocomplete', component: AutocompletePageComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
@@ -19,6 +21,7 @@ const routes: Routes = [
     AppComponent,
     // Pages
     HomeComponent,
+    ResumeComponent,
     AutocompletePageComponent,
     // Custom components
     AutocompleteComponent

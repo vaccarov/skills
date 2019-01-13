@@ -1,43 +1,43 @@
 .autocomplete {
-
+  
   &__container {
     padding: 60px;
     height: 100%;
+    background-color: #57606f;
   }
-
+  
   &__title {
     color: #2f3542;
   }
+  
+  &__feature {
+    display: inline-block;
+    text-align: left;
 
-  &__feature-container {
-    padding: 50px;
-    text-align: center;
-    margin-bottom: 50px;
+    &-container {
+      text-align: center;
+      margin-bottom: 50px;
+    }
   }
-
+  
   &__set-values, &__get-values {
     display: inline-block;
     width: 50%;
     vertical-align: top;
   }
-
+  
   &__form {
     margin-bottom: 20px;
     text-align: left;
-
+    
     & > * {
       display: block;
     }
-
+    
     & > label > div {
       display: inline-block;
       width: 200px;
     }
-  }
-
-  &__autocomplete {
-    display: inline-block;
-    text-align: left;
   }
 }
 
@@ -54,6 +54,7 @@ pre {
   }
   .autocomplete__set-values, .autocomplete__get-values {
     display: block;
+    width: 100%;
   }
   .autocomplete__feature-container {
     padding: 0;

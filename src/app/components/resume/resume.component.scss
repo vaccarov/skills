@@ -1,0 +1,94 @@
+.resume {
+    &__container {
+        min-height: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        background-color: #9b9b9b;
+        
+        & > div {
+            display: inline-block;
+            height: 100%;
+            vertical-align: top;
+            box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2),0 4px 20px 0 rgba(0,0,0,0.19);
+        }
+    }
+    
+    &__left {
+        width: 40%;
+        margin-right: 1%;
+        padding: 20px;
+        box-sizing: border-box;
+        background-color: #3b3b3b;
+    }
+    &__right {
+        width: 59%;
+        background-color: #6b6b6b;
+    }
+    
+    &__photo {
+        margin-top: 10px;
+        text-align: center;
+        
+        & > img {
+            width: 80%;
+        }
+    }
+    
+    &__nom {
+        font-size: 18px;
+        line-height: 30px;
+    }
+    
+    &__position {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    
+    &__contact, &__languages {
+        font-size: 12px;
+        text-align: left;
+        
+        & > div > div {
+            &:nth-child(1) {
+                width: 85px;
+                float: left;
+            }
+            &:nth-child(2) {
+                width: calc(100% - 85px);
+                float: left;
+            }
+        }
+    }
+    
+    &__title {
+        font-size: 25px;
+        margin-top: 20px;
+        margin-bottom: 15px;
+    }
+    
+    &__skills {
+        & > div {
+            margin: 10px 0;
+            
+            &  > div {
+                width: 50%;
+                display: inline-block;
+                vertical-align: middle;
+                
+                &:nth-child(2) {
+                    height: 18px;
+                    border-radius: 10px;
+                    border: 1px solid #FFF;
+                    box-sizing: border-box;
+                    overflow: hidden;
+                    
+                    & > div {
+                        height: 100%;
+                        background-color: #FFF;
+                    }
+                }
+            }       
+        }
+        
+    }
+}
