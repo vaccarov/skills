@@ -9,7 +9,8 @@ export class AutocompleteObject {
     public items: AutocompleteItem[], // The list of items (all possible choices of items)
     public maxHeight?: number, // One item is 55px, maxHeight = 55 x maxResults
     public value?: string, // The content in input
-    public cleanInputOnSelection?: boolean // If yes or no the input field has to be clear after user selects an option
-  ) { }
+    public cleanInputOnSelection?: boolean, // If yes or no the input field has to be clear after user selects an option
+    public width?: number
+    ) { }
 
 }

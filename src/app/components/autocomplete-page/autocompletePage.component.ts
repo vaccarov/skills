@@ -43,6 +43,7 @@ export class AutocompletePageComponent implements OnInit, OnDestroy {
       maxResults: [0],
       maxHeight: [5],
       value: [''],
+      width: [300],
       cleanInputOnSelection: [false]
       // items : [this.items]
     });
@@ -60,6 +61,7 @@ export class AutocompletePageComponent implements OnInit, OnDestroy {
       minCharacters: this.values.get('minCharacters').value,
       maxResults: this.values.get('maxResults').value,
       value: this.values.get('value').value,
+      width: this.values.get('width').value,
       cleanInputOnSelection: this.values.get('cleanInputOnSelection').value,
     } as AutocompleteObject;
 
@@ -71,5 +73,9 @@ export class AutocompletePageComponent implements OnInit, OnDestroy {
 
   itemSelected(item: any) {
     this.messageList.push(`Item selected : ${JSON.stringify(item)}`);
+  }
+
+  itemCleared() {
+    this.messageList.push(`Value erased`);
   }
 }

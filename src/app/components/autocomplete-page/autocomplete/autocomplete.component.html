@@ -1,4 +1,4 @@
-<div class="autocomplete__container" *ngIf="data">
+<div class="autocomplete__container" [ngStyle]="{'width.px': data.width}" *ngIf="data">
 
   <!-- Input where user enter the search term -->
   <input class="autocomplete__input"

@@ -27,7 +27,7 @@
   }
 
   &__list_items {
-    overflow-y: scroll;
+    overflow-y: auto;
     position: absolute;
     z-index: 1000;
     width: 100%;

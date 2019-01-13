@@ -6,16 +6,19 @@
 
   <div class="app__content">
 
-    <button class="app__burger-icon" (click)="toggleSideMenu()">{{sideMenuClosed ? O : X}}</button>
+    <div class="  app__content-burger" (click)="toggleSideMenu()">
+      <div></div><div></div><div></div>
+    </div>
 
-    <div class="app__side-menu" [class.w-0]="sideMenuClosed">
-      <ul class="app__side-menu--list">
+    <div class="app__content-side" [class.app__content-side--open]="sideMenuOpen">
+      <ul class="app__content-side--list">
         <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
         <li><a routerLink="/autocomplete" routerLinkActive="active">Autocomplete</a></li>
       </ul>
     </div>
 
-    <div class="app__main-menu" [class.w-100]="sideMenuClosed">
+    <div class="app__content-main" [class.app__content-main--open]="sideMenuOpen"
+      (click)="toggleSideMenu(false)">
       <router-outlet></router-outlet>
     </div>
 

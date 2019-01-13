@@ -6,9 +6,13 @@ import {Component} from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  public sideMenuClosed = false;
+  public sideMenuOpen = false;
 
-  toggleSideMenu() {
-    this.sideMenuClosed = !this.sideMenuClosed;
+  toggleSideMenu(open?: boolean) {
+    if (open === false) {
+      this.sideMenuOpen = false;
+    } else {
+      this.sideMenuOpen = !this.sideMenuOpen;
+    }
   }
 }
